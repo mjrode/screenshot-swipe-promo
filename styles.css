@@ -158,51 +158,54 @@ h3 {
 }
 
 .steps-grid {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-lg);
-    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .step {
-    flex: 1;
-    min-width: 180px;
-    max-width: 220px;
     text-align: center;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.step:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent-glow);
 }
 
 .step-number {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     background: var(--gradient-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: #000;
-    margin: 0 auto var(--spacing-lg);
+    margin: 0 auto var(--spacing-md);
 }
 
 .step h3 {
-    margin-bottom: var(--spacing-sm);
-    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
 }
 
 .step p {
     color: var(--color-text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
 .step-arrow {
-    font-size: 2rem;
-    color: var(--color-accent);
-    align-self: center;
-    margin-top: -20px;
+    display: none;
 }
 
 /* Feature Sections (alternating layout) */
@@ -501,17 +504,16 @@ h3 {
     }
 
     .steps-grid {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
     }
 
     .step {
-        max-width: 300px;
+        padding: var(--spacing-md);
     }
 
-    .step-arrow {
-        transform: rotate(90deg);
-        margin: 0;
+    .step p {
+        font-size: 0.8rem;
     }
 
     .feature-split,
