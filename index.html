@@ -332,6 +332,52 @@
             <p class="footer-copy">&copy; 2026 Screenshot Swipe. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        /* =====================================================
+           Intersection Observer — triggers .visible on scroll
+           ===================================================== */
+        (function () {
+            const animatedSelectors = [
+                '.scroll-reveal',
+                '.scroll-reveal-left',
+                '.scroll-reveal-right',
+                '.parallax-float',
+                '.badge-pop',
+                '.scale-blur-reveal',
+                '.tilt-in',
+                '.hero-text-stagger',
+                '.hero-image-stagger',
+                '.glow-scroll'
+            ];
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+            );
+
+            document.querySelectorAll(animatedSelectors.join(',')).forEach((el) => {
+                observer.observe(el);
+            });
+
+            /* Hero parallax — subtle drift on scroll */
+            const heroImg = document.querySelector('.parallax-hero');
+            if (heroImg) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.scrollY;
+                    const rate = scrolled * 0.15;
+                    heroImg.style.transform = `translateY(${rate}px)`;
+                }, { passive: true });
+            }
+        })();
+    </script>
 </body>
 
 </html>

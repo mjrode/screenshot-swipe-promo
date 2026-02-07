@@ -140,274 +140,170 @@ body::after {
 }
 
 /* =====================================================
-   SCROLL-DRIVEN ANIMATIONS (CSS Native)
+   SCROLL-DRIVEN ANIMATIONS (Intersection Observer + CSS Transitions)
+   Works in ALL browsers including Safari/WebKit
    ===================================================== */
 
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
+/* --- Base hidden states (before .visible is added by JS) --- */
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.scroll-reveal,
+.scroll-reveal-left,
+.scroll-reveal-right,
+.parallax-float,
+.badge-pop,
+.scale-blur-reveal,
+.tilt-in,
+.hero-text-stagger,
+.hero-image-stagger {
+    opacity: 0;
+    will-change: transform, opacity;
 }
 
-@keyframes parallax-drift {
-    from {
-        transform: translateY(-20px);
-    }
-
-    to {
-        transform: translateY(40px);
-    }
-}
-
-@keyframes slide-from-left {
-    from {
-        opacity: 0;
-        transform: translateX(-60px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-from-right {
-    from {
-        opacity: 0;
-        transform: translateX(60px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes float-parallax {
-    from {
-        transform: translateY(40px) scale(0.96);
-    }
-
-    to {
-        transform: translateY(-20px) scale(1);
-    }
-}
-
-@keyframes badge-pop {
-    from {
-        opacity: 0;
-        transform: scale(0.6);
-    }
-
-    40% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes scale-blur-reveal {
-    from {
-        opacity: 0;
-        transform: scale(0.85);
-        filter: blur(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0);
-    }
-}
-
-@keyframes tilt-in {
-    from {
-        opacity: 0;
-        transform: perspective(800px) rotateX(8deg) translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: perspective(800px) rotateX(0deg) translateY(0);
-    }
-}
-
-@keyframes glow-pulse {
-    from {
-        opacity: 0.3;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-@keyframes hero-text-enter {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes hero-image-enter {
-    from {
-        opacity: 0;
-        transform: translateY(60px) scale(0.92);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Scroll reveal — triggers as element enters viewport */
+/* Default: fade up */
 .scroll-reveal {
-    animation: reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 30%;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Directional slide reveals for feature text */
+/* Slide from left */
 .scroll-reveal-left {
-    animation: slide-from-left linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+    transform: translateX(-60px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Slide from right */
 .scroll-reveal-right {
-    animation: slide-from-right linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+    transform: translateX(60px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Parallax float for feature images */
 .parallax-float {
-    animation: float-parallax linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 60%;
+    transform: translateY(50px) scale(0.96);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Badge pop-in with overshoot */
+/* Badge pop with overshoot via spring curve */
 .badge-pop {
-    animation: badge-pop linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 25%;
+    transform: scale(0.6);
+    transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Scale + blur reveal for showcase items */
+/* Scale + blur reveal for showcase */
 .scale-blur-reveal {
-    animation: scale-blur-reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 40%;
+    transform: scale(0.85);
+    filter: blur(8px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* 3D tilt-in for feature cards */
 .tilt-in {
-    animation: tilt-in linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+    transform: perspective(800px) rotateX(8deg) translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* CTA glow intensification */
-.glow-scroll {
-    animation: glow-pulse linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 50%;
-}
-
-/* Hero stagger animations */
+/* Hero stagger */
 .hero-text-stagger {
-    animation: hero-text-enter linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 40%;
+    transform: translateY(30px) scale(0.97);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-image-stagger {
-    animation: hero-image-enter linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 50%;
+    transform: translateY(60px) scale(0.92);
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 0.15s;
 }
 
-/* Staggered delays for grid items */
+/* --- Visible state (added by Intersection Observer) --- */
+
+.scroll-reveal.visible,
+.scroll-reveal-left.visible,
+.scroll-reveal-right.visible,
+.parallax-float.visible,
+.scale-blur-reveal.visible,
+.tilt-in.visible,
+.hero-text-stagger.visible,
+.hero-image-stagger.visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+}
+
+.badge-pop.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* CTA glow intensification */
+.glow-scroll::before {
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.glow-scroll.visible::before {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+}
+
+/* Staggered transition delays for grid items */
 .reveal-delay-1 {
-    animation-delay: 0ms;
+    transition-delay: 0ms;
 }
 
 .reveal-delay-2 {
-    animation-delay: 80ms;
+    transition-delay: 100ms;
 }
 
 .reveal-delay-3 {
-    animation-delay: 160ms;
+    transition-delay: 200ms;
 }
 
 .reveal-delay-4 {
-    animation-delay: 240ms;
+    transition-delay: 300ms;
 }
 
 .reveal-delay-5 {
-    animation-delay: 320ms;
+    transition-delay: 400ms;
 }
 
 .reveal-delay-6 {
-    animation-delay: 400ms;
+    transition-delay: 500ms;
 }
 
 .reveal-delay-7 {
-    animation-delay: 480ms;
+    transition-delay: 600ms;
 }
 
-/* Hero parallax — image drifts as you scroll */
+/* Hero parallax — continuous scroll effect */
 .parallax-hero {
-    animation: parallax-drift linear both;
-    animation-timeline: view();
-    animation-range: cover 0% cover 80%;
+    transition: transform 0.1s linear;
 }
 
-/* Fallback for browsers that don't support scroll-timeline */
-@supports not (animation-timeline: view()) {
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
 
     .scroll-reveal,
     .scroll-reveal-left,
     .scroll-reveal-right,
+    .parallax-float,
+    .badge-pop,
     .scale-blur-reveal,
     .tilt-in,
-    .badge-pop,
     .hero-text-stagger,
     .hero-image-stagger {
-        animation: none;
         opacity: 1;
         transform: none;
         filter: none;
-    }
-
-    .parallax-hero,
-    .parallax-float {
-        animation: none;
-        transform: none;
-    }
-
-    .glow-scroll {
-        animation: none;
-        opacity: 1;
+        transition: none;
     }
 }
 
@@ -939,13 +835,15 @@ body::after {
     /* Simplify scroll animations on mobile */
     .scroll-reveal-left,
     .scroll-reveal-right {
-        animation-name: reveal;
-        /* Fall back to simple fade-up */
+        transform: translateY(40px);
+        /* Simple vertical reveal instead of horizontal */
+        transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .tilt-in {
-        animation-name: reveal;
-        /* No 3D on mobile */
+        transform: translateY(30px);
+        /* No 3D perspective on mobile */
+        transition: opacity 0.6s ease, transform 0.6s ease;
     }
 }
 
