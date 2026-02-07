@@ -148,6 +148,7 @@ body::after {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -158,8 +159,122 @@ body::after {
     from {
         transform: translateY(-20px);
     }
+
     to {
         transform: translateY(40px);
+    }
+}
+
+@keyframes slide-from-left {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-from-right {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float-parallax {
+    from {
+        transform: translateY(40px) scale(0.96);
+    }
+
+    to {
+        transform: translateY(-20px) scale(1);
+    }
+}
+
+@keyframes badge-pop {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-blur-reveal {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes tilt-in {
+    from {
+        opacity: 0;
+        transform: perspective(800px) rotateX(8deg) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(800px) rotateX(0deg) translateY(0);
+    }
+}
+
+@keyframes glow-pulse {
+    from {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes hero-text-enter {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes hero-image-enter {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -170,13 +285,95 @@ body::after {
     animation-range: entry 0% entry 30%;
 }
 
+/* Directional slide reveals for feature text */
+.scroll-reveal-left {
+    animation: slide-from-left linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+}
+
+.scroll-reveal-right {
+    animation: slide-from-right linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+}
+
+/* Parallax float for feature images */
+.parallax-float {
+    animation: float-parallax linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+}
+
+/* Badge pop-in with overshoot */
+.badge-pop {
+    animation: badge-pop linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 25%;
+}
+
+/* Scale + blur reveal for showcase items */
+.scale-blur-reveal {
+    animation: scale-blur-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+}
+
+/* 3D tilt-in for feature cards */
+.tilt-in {
+    animation: tilt-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+}
+
+/* CTA glow intensification */
+.glow-scroll {
+    animation: glow-pulse linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+/* Hero stagger animations */
+.hero-text-stagger {
+    animation: hero-text-enter linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+}
+
+.hero-image-stagger {
+    animation: hero-image-enter linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+}
+
 /* Staggered delays for grid items */
-.reveal-delay-1 { animation-delay: 0ms; }
-.reveal-delay-2 { animation-delay: 80ms; }
-.reveal-delay-3 { animation-delay: 160ms; }
-.reveal-delay-4 { animation-delay: 240ms; }
-.reveal-delay-5 { animation-delay: 320ms; }
-.reveal-delay-6 { animation-delay: 400ms; }
+.reveal-delay-1 {
+    animation-delay: 0ms;
+}
+
+.reveal-delay-2 {
+    animation-delay: 80ms;
+}
+
+.reveal-delay-3 {
+    animation-delay: 160ms;
+}
+
+.reveal-delay-4 {
+    animation-delay: 240ms;
+}
+
+.reveal-delay-5 {
+    animation-delay: 320ms;
+}
+
+.reveal-delay-6 {
+    animation-delay: 400ms;
+}
+
+.reveal-delay-7 {
+    animation-delay: 480ms;
+}
 
 /* Hero parallax — image drifts as you scroll */
 .parallax-hero {
@@ -187,14 +384,30 @@ body::after {
 
 /* Fallback for browsers that don't support scroll-timeline */
 @supports not (animation-timeline: view()) {
-    .scroll-reveal {
+
+    .scroll-reveal,
+    .scroll-reveal-left,
+    .scroll-reveal-right,
+    .scale-blur-reveal,
+    .tilt-in,
+    .badge-pop,
+    .hero-text-stagger,
+    .hero-image-stagger {
         animation: none;
         opacity: 1;
         transform: none;
+        filter: none;
     }
-    .parallax-hero {
+
+    .parallax-hero,
+    .parallax-float {
         animation: none;
         transform: none;
+    }
+
+    .glow-scroll {
+        animation: none;
+        opacity: 1;
     }
 }
 
@@ -325,7 +538,7 @@ body::after {
     direction: rtl;
 }
 
-.feature-split.reverse > * {
+.feature-split.reverse>* {
     direction: ltr;
 }
 
@@ -721,6 +934,18 @@ body::after {
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Simplify scroll animations on mobile */
+    .scroll-reveal-left,
+    .scroll-reveal-right {
+        animation-name: reveal;
+        /* Fall back to simple fade-up */
+    }
+
+    .tilt-in {
+        animation-name: reveal;
+        /* No 3D on mobile */
     }
 }
 
