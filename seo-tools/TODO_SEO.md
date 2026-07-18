@@ -13,11 +13,11 @@ Lead with comparison-shaped posts, use how-tos as the supporting cluster.
 ## Backlog (rough priority order)
 
 ### Comparison / roundup lane (click drivers)
-- [ ] "Swipewipe vs Screenshot Swipe" — single-competitor comparison vs the category leader
-- [ ] "Slidebox alternatives" — alternative-seeker intent
-- [ ] "CleanMy®Phone review: is it worth the subscription?" — review-intent, honest
+- [x] swipewipe-vs-screenshot-swipe — comparison (2026-07-18)
+- [x] slidebox-alternatives — comparison (2026-07-18)
+- [x] cleanmyphone-review — review (2026-07-18)
 - [ ] "Best free photo cleaner apps for iPhone" — broader roundup, plant Screenshot Swipe for the screenshot use case
-- [ ] "Best OCR apps for iPhone" — adjacent category where we're genuinely strong
+- [x] best-ocr-apps-iphone — roundup (2026-07-18)
 
 ### How-to / AEO lane (impression cluster)
 - [ ] "How to search text in screenshots on iPhone" — Live Text limits + OCR apps
