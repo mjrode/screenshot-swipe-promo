@@ -404,6 +404,47 @@ img { max-width: 100%; height: auto; }
 .entry-rating { color: var(--muted); font-size: 0.95rem; white-space: nowrap; }
 
 /* CTA block */
+.post-app-cta {
+    clear: both;
+    display: grid;
+    grid-template-columns: 106px minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    margin: 36px 0;
+    padding: 24px;
+    border: 1px solid #b5e7ef;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #effbfe, #fff);
+}
+
+.post-app-cta .post-app-preview { display: block; width: 106px; border-radius: 10px; }
+.post-app-cta .post-app-eyebrow { margin: 0 0 8px; color: #32636d; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.post-app-cta h3 { margin: 0 0 10px; font-size: 1.35rem; line-height: 1.25; }
+.post-app-cta .post-app-copy > p { font-size: 0.95rem; line-height: 1.5; }
+.post-app-cta .post-app-button { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 9px; background: var(--ink); color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 650; line-height: 1.4; }
+.post-app-cta .post-app-button:hover { background: #174856; }
+.post-app-cta .post-app-button:focus-visible, .post-app-qr a:focus-visible { outline: 3px solid #087990; outline-offset: 4px; }
+.post-app-cta .post-app-proof { margin: 10px 0 0; color: var(--muted); font-size: 0.72rem; }
+.post-app-qr { display: none; }
+.post-body .post-source-note { font-size: 0.88rem; color: var(--muted); }
+.post-body h2 { clear: both; }
+
+@media (min-width: 960px) and (hover: hover) {
+    .post-app-cta { grid-template-columns: 90px minmax(0, 1fr) 132px; gap: 20px; }
+    .post-app-cta .post-app-preview { width: 90px; }
+    .post-app-qr { display: block; text-align: center; }
+    .post-app-qr img { display: block; width: 132px; height: 132px; border-radius: 6px; }
+    .post-app-cta .post-app-qr p { margin: 7px 0 0; font-size: 0.7rem; color: var(--muted); }
+}
+
+@media (max-width: 480px) {
+    .post-app-cta { grid-template-columns: 68px minmax(0, 1fr); gap: 16px; padding: 18px; }
+    .post-app-cta .post-app-preview { width: 68px; }
+    .post-app-cta h3 { font-size: 1.2rem; }
+    .post-app-cta .post-app-copy > p { font-size: 0.88rem; }
+    .post-app-cta .post-app-proof { font-size: 0.7rem; }
+}
+
 .blog-post-cta {
     clear: both;
     background: var(--ink);

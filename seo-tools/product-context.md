@@ -1,7 +1,7 @@
 # Screenshot Swipe — Product Context
 
 Single source of truth for content skills. What the product IS — stable facts only.
-Last refreshed: 2026-07-18 (from App Store listing v3.0 + app repo METADATA_v3.0.md).
+Last checked: 2026-09-21 (Apple US lookup API and current App Store listing v3.0).
 
 ## Identity
 
@@ -9,7 +9,7 @@ Last refreshed: 2026-07-18 (from App Store listing v3.0 + app repo METADATA_v3.0
 - **Tagline:** The smart way to clean up your screenshots
 - **Elevator pitch:** Your camera roll is full of screenshots you saved "just in case." Screenshot Swipe turns the pile into something organized, searchable, and clean — swipe right to keep, left to delete, with AI help deciding and on-device OCR making everything findable.
 - **Category:** Photo & Video / Utilities
-- **Platform:** iPhone, iOS 17.0+, ~15 MB
+- **Platform:** iPhone and iPad (current listing); ~15 MB
 - **App Store:** https://apps.apple.com/us/app/screenshot-swipe-smart-notes/id6757885971 (id 6757885971)
 - **Developer:** Michael Rode (solo indie)
 - **Site:** https://screenshotswipe.com/
@@ -42,11 +42,11 @@ Last refreshed: 2026-07-18 (from App Store listing v3.0 + app repo METADATA_v3.0
 
 ## Honest limitations (use these — they build credibility)
 
-- New app with a tiny rating base (5.0★ from 5 ratings as of Jul 2026) vs. Swipewipe's 82k.
-- Screenshots only — does nothing for a camera roll full of photos/videos.
+- New app with a tiny rating base (5.0 from 5 US ratings, rechecked September 21, 2026) vs. Swipewipe's 93,545 US ratings on that date.
+- Position content around screenshot review. Existing app marketing screenshots include a Photos toggle, so do not claim the app cannot review photos. Do not imply video-cleanup support without checking.
 - No duplicate finder, no storage-reclaim dashboard.
 - Smart Review requires internet and a Pro purchase.
-- iPhone only; no iPad/Android.
+- iPhone and iPad listing; no verified Android version.
 
 ## Competitor set (for comparisons)
 

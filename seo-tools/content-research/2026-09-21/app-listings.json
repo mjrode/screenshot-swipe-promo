@@ -1,0 +1,42 @@
+{
+  "checked": "2026-09-21",
+  "country": "US",
+  "apps": [
+    {
+      "trackId": 6757885971,
+      "trackName": "Screenshot Swipe: Smart Notes",
+      "trackViewUrl": "https://apps.apple.com/us/app/screenshot-swipe-smart-notes/id6757885971?uo=4",
+      "sellerUrl": "https://screenshotswipe.com/",
+      "price": 0.0,
+      "formattedPrice": "Free",
+      "version": "3.0",
+      "currentVersionReleaseDate": "2026-04-29T09:16:25Z",
+      "averageUserRating": 5,
+      "userRatingCount": 5
+    },
+    {
+      "trackId": 984305203,
+      "trackName": "Slidebox: Photo Cleaner App",
+      "trackViewUrl": "https://apps.apple.com/us/app/slidebox-photo-cleaner-app/id984305203?uo=4",
+      "sellerUrl": "http://slidebox.co/?ref=appstore",
+      "price": 0.0,
+      "formattedPrice": "Free",
+      "version": "26.913.0",
+      "currentVersionReleaseDate": "2026-09-18T00:52:02Z",
+      "averageUserRating": 4.80799,
+      "userRatingCount": 16525
+    },
+    {
+      "trackId": 1583884012,
+      "trackName": "Swipewipe: Photo Cleaner",
+      "trackViewUrl": "https://apps.apple.com/us/app/swipewipe-photo-cleaner/id1583884012?uo=4",
+      "sellerUrl": "https://musicworldmedia.com",
+      "price": 0.0,
+      "formattedPrice": "Free",
+      "version": "3.4.15",
+      "currentVersionReleaseDate": "2026-09-15T19:25:42Z",
+      "averageUserRating": 4.68949,
+      "userRatingCount": 93545
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://screenshotswipe.com/</loc>
@@ -7,47 +7,77 @@
     </url>
     <url>
         <loc>https://screenshotswipe.com/blog/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-09-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://screenshotswipe.com/blog/best-iphone-screenshot-cleanup-apps/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-09-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://screenshotswipe.com/blog/how-to-delete-screenshots-iphone/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-09-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://screenshotswipe.com/blog/how-to-organize-screenshots-iphone/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-09-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://screenshotswipe.com/blog/swipewipe-vs-screenshot-swipe/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-09-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://screenshotswipe.com/blog/slidebox-alternatives/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-09-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://screenshotswipe.com/blog/cleanmyphone-review/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-09-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://screenshotswipe.com/blog/best-ocr-apps-iphone/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-09-21</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://screenshotswipe.com/privacy/</loc>
         <lastmod>2026-07-18</lastmod>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://screenshotswipe.com/blog/screenshot-reminder-iphone/</loc>
+        <lastmod>2026-09-21</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://screenshotswipe.com/blog/slidebox-review/</loc>
+        <lastmod>2026-09-21</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://screenshotswipe.com/blog/best-free-photo-cleaner-apps-iphone/</loc>
+        <lastmod>2026-09-21</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://screenshotswipe.com/blog/how-to-tag-photos-iphone/</loc>
+        <lastmod>2026-09-21</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://screenshotswipe.com/blog/how-to-add-notes-to-photos-iphone/</loc>
+        <lastmod>2026-09-21</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://screenshotswipe.com/blog/how-to-find-screenshots-iphone/</loc>
+        <lastmod>2026-09-21</lastmod>
+        <priority>0.8</priority>
     </url>
 </urlset>
